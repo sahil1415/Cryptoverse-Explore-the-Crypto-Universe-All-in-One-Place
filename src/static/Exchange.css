@@ -1,0 +1,106 @@
+/* Container for exchange list */
+.exchange-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 0 15px; /* Add slight padding for content alignment */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.main-heading{
+  margin-top: 10px;
+}
+
+/* Column header styling */
+.column-name {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 10px;
+  background-color: #fff; /* Lighter background for a clean look */
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Subtle line separating headers */
+  margin-bottom: 10px;
+}
+
+.column-name p {
+  margin: 0;
+  padding-left: 10px;
+  color: #555; /* Soft color for readability */
+}
+
+/* Styling for each exchange item */
+.exchange-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eee; /* Light border between items */
+}
+
+.exchange-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.exchange-details:hover {
+  background-color: #f9f9f9; /* Slight hover effect */
+}
+
+/* Styling for each column in the exchange details */
+.exchange-column {
+  text-align: left;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #333; /* Clean dark color */
+}
+
+/* Styling the image/icon in the Name column */
+.exchange-column img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Styling for the expanded description dropdown */
+.exchange-description {
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background-color: #fafafa; /* Subtle background for description */
+  padding: 0;
+  max-height: 0;
+  border-top: 1px solid #ddd;
+}
+
+.exchange-description.expanded {
+  max-height: 150px; /* Slightly smaller max-height for a minimal look */
+  padding: 8px;
+}
+
+/* Link styling */
+.exchange-description a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.exchange-description a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .exchange-details {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .exchange-column img {
+    width: 20px;
+    height: 20px;
+  }
+}

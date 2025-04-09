@@ -1,0 +1,205 @@
+/* CryptoDetails.css */
+
+/* Main container styles */
+.crypto-details-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f7fc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+.main-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.coin-name-details {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.coin-description {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+select {
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Stats container styles */
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+/* Individual stats box */
+.coin-stats, .other-stats {
+    width: 45%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.coin-stats h2, .other-stats h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* para styling for each stat item */
+.para {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #444;
+    margin: 10px 0;
+}
+
+.para p {
+    margin: 0;
+}
+
+/* Add icon spacing and light blue tint for icons and values only */
+.para p:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.para p:first-child svg {
+    margin-right: 10px;
+    color: #1e90ff; /* Light blue tint for icons */
+}
+
+.para p:last-child {
+    font-weight: bold;
+    color: #1e90ff; /* Light blue tint for values */
+}
+
+/* Loading and error states */
+.loading, .error {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ff6347;
+    margin-top: 40px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coin-stats, .other-stats {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* Main container for the section */
+.other-information {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1388px;
+    margin: 20px auto;
+  }
+  
+  /* Styling for headings */
+  .other-information h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Styling for paragraphs */
+  .other-information p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Container for the links */
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  /* Individual link item */
+  .link-item {
+    margin-bottom: 5px;
+  }
+  
+  /* Style for each link block */
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Make sure text elements align properly */
+  .links p {
+    margin: 0;
+    line-height: 1;
+  }
+  
+  /* Style for type and name */
+  #type {
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+  }
+  
+  #name {
+    font-weight: normal;
+    color: #0077cc;
+  }
+  
+  /* Link styling */
+  .specific-coin-links {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+  }
+  
+  /* Hover effect */
+  .specific-coin-links:hover .links {
+    background-color: #e0e0e0;
+  }
+  

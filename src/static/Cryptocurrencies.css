@@ -1,0 +1,92 @@
+/* Main wrapper */
+.cryptocurrencies-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Searchbar */
+.searchbar {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 24px;
+  display: block;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Cards grid */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Individual coin card */
+.coin-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+.coin-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+.coin-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Coin image */
+.image {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 12px;
+}
+
+/* Coin text */
+.coin-name,
+.coin-rank,
+.coin-price,
+.coin-marketcap,
+.coin-change {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #333; /* Uniform neutral text color */
+}
+
+.coin-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Loading & Error */
+#loading,
+#error {
+  text-align: center;
+  font-size: 18px;
+  padding: 40px;
+  color: #999;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .searchbar {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .coin-card {
+    padding: 16px;
+  }
+
+  .coin-name {
+    font-size: 15px;
+  }
+}
