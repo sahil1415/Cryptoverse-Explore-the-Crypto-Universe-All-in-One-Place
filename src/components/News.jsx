@@ -31,17 +31,15 @@ const News = ({simplified}) => {
   
   
   console.log("Filtereddata-", filteredNewsData);
-  if (isLoading || isError) {
-      return <LoadingAndError isLoading={isLoading} isError={isError}/>;
-  }
-
-
   const filteredData = filteredNewsData.filter((news) => 
   news.title.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
     <div className='news-container'>
-      {!simplified && 
+      {(isLoading || isError) && (
+        <LoadingAndError isLoading={isLoading} isError={isError} />
+      )}
+      {(!simplified && !isLoading && !isError) && 
           <input 
           className='crypto-input' 
           placeholder='Cryptocurrency'

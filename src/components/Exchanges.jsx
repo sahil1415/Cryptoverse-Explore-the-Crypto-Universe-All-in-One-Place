@@ -17,16 +17,15 @@ const ExchangeList = () => {
 
   console.log('Component rendered - Loading:', isLoading, 'Error:', isError, 'Data:', data);
 
-  if (isLoading || isError) {
-    return <LoadingAndError isLoading={isLoading} isError={isError}/>;
-  }
-
   const handleToggle = (index) => {
     setExpandedIndex(prevIndex => (prevIndex === index ? null : index));
   }
 
   return (
     <>
+      {(isError || isLoading) && (
+        <LoadingAndError isLoading={isLoading} isError={isError}/>
+      )}
       <div className="main-heading">
         <h1>Top 100 Coin Exchanges In The World</h1>
       </div>

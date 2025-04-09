@@ -32,13 +32,14 @@ const CryptoCurrencies = ({ simplified }) => {
     setFilteredCoins(result);
   }, [searchTerm, coins]);
 
-  if (isLoading || isError) {
-    return <LoadingAndError isLoading={isLoading} isError={isError}/>;
-  }
+
 
 
   return (
     <div className='cryptocurrencies-container'>
+      {(isLoading || isError) && (
+        <LoadingAndError isLoading={isLoading} isError={isError}/>
+      )}
       {!simplified && (
         <input
           className='searchbar'

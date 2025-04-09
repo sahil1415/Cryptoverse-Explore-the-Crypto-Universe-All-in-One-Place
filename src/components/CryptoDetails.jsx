@@ -30,13 +30,15 @@ const CryptoDetails = () => {
   console.log(coinDetails);
   console.log(coinHistoryDetails);
 
-
-  if (coinDetailLoading || coinDetailError || coinHistoryLoading || coinHistoryError) {
-    return <LoadingAndError isLoading={coinDetailLoading ||  coinHistoryLoading} isError={coinHistoryError || coinDetailError}/>;
-  }
+  const error = coinHistoryLoading || coinHistoryError;
+  const loading = coinDetailLoading || coinDetailError;
 
   return (
     <div className="crypto-details-container">
+      {(error || loading) && (
+        <LoadingAndError isLoading={loading} isError={error}/>
+      )}
+      
       {currentCoin ? (
         <>
           <div className="main-heading">

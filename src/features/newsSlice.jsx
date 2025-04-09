@@ -5,7 +5,7 @@ export const newsData = createAsyncThunk('news/fetchData', async () => {
   
   const options = {
     method: 'GET',
-    url: 'https://cryptocurrency-news2.p.rapidapi.com/v1/theguardian',
+    url: 'https://cryptocurrency-news2.p.rapidapi.com/v1/cointelegraph',
     headers: {
       'x-rapidapi-key': 'bbdddc0633msh0fcdc02a19a59b7p133078jsn917ebb5c31cb',
       'x-rapidapi-host': 'cryptocurrency-news2.p.rapidapi.com'
