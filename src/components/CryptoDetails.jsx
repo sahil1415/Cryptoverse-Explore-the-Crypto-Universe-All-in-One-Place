@@ -31,8 +31,8 @@ const CryptoDetails = () => {
   console.log(coinHistoryDetails);
 
 
-  if (isLoading || isError) {
-    return <LoadingAndError isLoading={isLoading} isError={isError}/>;
+  if (coinDetailLoading || coinDetailError || coinHistoryLoading || coinHistoryError) {
+    return <LoadingAndError isLoading={coinDetailLoading ||  coinHistoryLoading} isError={coinHistoryError || coinDetailError}/>;
   }
 
   return (
