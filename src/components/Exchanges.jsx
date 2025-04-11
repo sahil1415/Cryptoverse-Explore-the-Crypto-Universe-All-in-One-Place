@@ -8,16 +8,15 @@ import {LoadingAndError} from '../components'
 
 const ExchangeList = () => {
   const dispatch = useDispatch();
-  const { isLoading, isError, data, errorMessage } = useSelector((state) => state.exchange);
+  const { isLoading, isError, data} = useSelector((state) => state.exchange);
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   useEffect(() => {
     dispatch(exchangeData());
   }, [dispatch]);
 
-  console.log('Component rendered - Loading:', isLoading, 'Error:', isError, 'Data:', data);
-
   const handleToggle = (index) => {
+    // Previous states is expliticly passed by react
     setExpandedIndex(prevIndex => (prevIndex === index ? null : index));
   }
 
@@ -39,7 +38,6 @@ const ExchangeList = () => {
           <p>Total Volume 24h</p>
         </div>
         <div className="exchange-list">
-          {/* Render a list of exchanges */}
           {data.map((exchange, index) => (
             <div className="exchange-item" key={exchange.id}>
               <div className="exchange-details" onClick={() => handleToggle(index)}>
@@ -57,7 +55,7 @@ const ExchangeList = () => {
               <div
                 className={`exchange-description ${expandedIndex === index ? 'expanded' : ''}`}
                 style={{
-                  maxHeight: expandedIndex === index ? '200px' : '0',
+                  maxHeight: expandedIndex === index ? '300px' : '0',
                   padding: expandedIndex === index ? '10px' : '0',
                 }}
               >

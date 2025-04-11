@@ -5,7 +5,7 @@ import axios from 'axios'
   🔥 Thunk to fetch crypto data from an external API
   - createAsyncThunk accepts:
       1. A unique action type string
-      2. An async function that performs the fetch
+      2. An async function called thunk that performs the fetch
   - It automatically creates three action types:
       a. pending
       b. fulfilled
@@ -64,8 +64,8 @@ export const coinHistory = createAsyncThunk('coinHistory/fetchHistory', async ({
     method: 'GET',
     url: `https://coinranking1.p.rapidapi.com/coin/${uuid}/history`,
     params: {
-      referenceCurrencyUuid: 'yhjMzLPhuIDl', // You can make this dynamic too if needed
-      timePeriod: timePeriod, // Use the timePeriod passed from the action payload
+      referenceCurrencyUuid: 'yhjMzLPhuIDl',
+      timePeriod: timePeriod, 
     },
     headers: {
       'x-rapidapi-key': 'bbdddc0633msh0fcdc02a19a59b7p133078jsn917ebb5c31cb',
@@ -74,7 +74,7 @@ export const coinHistory = createAsyncThunk('coinHistory/fetchHistory', async ({
   };
     const response = await axios.request(options);
     console.log("CoinHistory",response.data);
-    return response.data; // Return the response data as expected by the reducer
+    return response.data; 
 });
 
 
@@ -87,14 +87,14 @@ export const coinHistory = createAsyncThunk('coinHistory/fetchHistory', async ({
 const coinSlice = createSlice({
   name: 'coin',
   initialState: {
-    isLoading: false,   // tracks loading state
-    isError: false,     // tracks if there's an error during fetch
-    data: null,         // stores fetched data from the API
+    isLoading: false,   
+    isError: false,   
+    data: null,    
     coinDetails: null,
     coinHistoryDetails: null,
   },
 
-  // 🔁 Reducers (for actions like add/remove/update if needed)
+  // Reducers (for actions like add/remove/update if needed)
   reducers: {},
 
   /*

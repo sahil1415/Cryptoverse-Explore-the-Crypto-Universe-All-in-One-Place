@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {createBrowserRouter, RouterProvider } from 'react-router-dom'
 import {NavBar, CryptoCurrencies, Footer, Exchanges, Home, News, About} from './components'
 import CryptoDetails from './components/CryptoDetails'
 

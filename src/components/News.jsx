@@ -47,16 +47,15 @@ const News = ({simplified}) => {
         />
       }
       <div className='news-card-container'>
-      {filteredData.map((article, index) => (
-        <NavLink className= 'news-link' to={article.url} key={index} target="_blank" rel="noopener noreferrer">
+      {filteredData.map((article) => (
+        <NavLink className= 'news-link' to={article.url} key={article.url} target="_blank" rel="noopener noreferrer">
           <div className='news-card'>
             <h2 className='news-headline'>{article.title}</h2>
-            {/* Shortened description to avoid cutting off text */}
             <p className='description'>
               {article.description?.length > 150 ? `${article.description.substring(0, 100)}...` : article.description}
             </p>
             <img id= 'news-image' src={article.thumbnail} alt={article.title} />
-            <p className='news-date'>{new Date(article.createdAt).toLocaleDateString()}</p> {/* Date formatting */}
+            <p className='news-date'>{new Date(article.createdAt).toLocaleDateString()}</p>
           </div>
         </NavLink>
       ))}

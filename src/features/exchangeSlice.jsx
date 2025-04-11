@@ -15,7 +15,6 @@ const exchangeSlice = createSlice({
     isLoading: false, // tracks loading state
     isError: false,   // tracks if there's an error during fetch
     data: [],         // stores fetched data (we'll store it as an array)
-    errorMessage: ''  // store the error message
   },
 
   reducers: {},
@@ -26,7 +25,6 @@ const exchangeSlice = createSlice({
       .addCase(exchangeData.pending, (state) => {
         state.isLoading = true
         state.isError = false
-        state.errorMessage = ''
         console.log('Loading data...');
       })
       // When the API call is successful
@@ -40,7 +38,6 @@ const exchangeSlice = createSlice({
       .addCase(exchangeData.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
-        state.errorMessage = action.error.message // Storing the error message
         console.error('Error:', action.error.message);
       })
   },

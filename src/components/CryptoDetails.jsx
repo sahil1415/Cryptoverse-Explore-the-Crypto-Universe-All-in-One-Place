@@ -11,7 +11,8 @@ import {LoadingAndError} from '../components';
 const CryptoDetails = () => {
   const dispatch = useDispatch();
   const { uuid } = useParams();
-  console.log("UUID", uuid);
+
+  // console.log("UUID", uuid);
   const [timePeriod, setTimePeriod] = useState('24h');
   const time = ['3h', '24h', '7d', '30d', '3m', '1y', '3y', '5y'];
 
@@ -26,9 +27,9 @@ const CryptoDetails = () => {
   }, [uuid, timePeriod, dispatch]);
 
   const currentCoin = coinDetails?.data?.coin;
-  console.log(currentCoin);
-  console.log(coinDetails);
-  console.log(coinHistoryDetails);
+  // console.log(currentCoin);
+  // console.log(coinDetails);
+  // console.log(coinHistoryDetails);
 
   const error = coinHistoryLoading || coinHistoryError;
   const loading = coinDetailLoading || coinDetailError;
@@ -38,7 +39,7 @@ const CryptoDetails = () => {
       {(error || loading) && (
         <LoadingAndError isLoading={loading} isError={error}/>
       )}
-      
+      // Type safety, checking if current coin is not undefined then proceed further
       {currentCoin ? (
         <>
           <div className="main-heading">
@@ -118,8 +119,8 @@ const CryptoDetails = () => {
             <p>{currentCoin.description}</p>
             <h2>Want to learn more?</h2>
             <div className="links-container">
-              {currentCoin.links.map((link, index) => (
-                <div key={index} className="link-item">
+              {currentCoin.links.map((link) => (
+                <div key={link.url} className="link-item">
                   <NavLink className = 'specific-coin-links' to={link.url} target="_blank">
                     <div className='links'>
                       <p id='type'>{link.type}</p>

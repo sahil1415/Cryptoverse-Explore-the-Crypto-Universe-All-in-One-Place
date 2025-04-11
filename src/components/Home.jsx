@@ -19,7 +19,6 @@ const Home = () => {
     }
   }, []);
 
-  // console.log(data);
   if (isLoading || isError) {
     return <LoadingAndError isLoading={isLoading} isError={isError}/>;
   }
